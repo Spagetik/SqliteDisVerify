@@ -1,9 +1,9 @@
 discord:
   bot:
-    token: 'OTAyOTQ4NzEyNjMwODcwMDE3.YXl2hQ.K24yzhyRavs4aHG9-V9DX1gIOfU'
+    token: '-'
   guild:
-    guild_id: '901925644689080360'
-    common_role_id: '902944237954408448'
+    guild_id: '-'
+    common_role_id: '-'
   messages:
     successful: 'You successfully verified!'
     no_code: 'Code doesnt exists, try to get new one!'
