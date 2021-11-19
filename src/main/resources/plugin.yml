@@ -4,3 +4,10 @@ main: org.spagetik.sqlitedisverify.SqliteDisVerify
 api-version: 1.17
 commands:
   discordverify: {}
+  bandiscord: {}
+  unbandiscord: {}
+permissions:
+  disverify.permission:
+    description: Verify permission
+  disban.permission:
+    description: Ban and Unban permission

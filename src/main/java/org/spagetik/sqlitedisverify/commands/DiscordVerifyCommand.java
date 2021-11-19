@@ -3,6 +3,7 @@ package org.spagetik.sqlitedisverify.commands;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -53,6 +54,10 @@ public class DiscordVerifyCommand extends AbstractCommand {
 
     @Override
     public void execute(CommandSender sender, String label, String[] args) {
+        if (!sender.hasPermission("verify.permission")) {
+            sendUnsuccessfulMsg((Player) sender);
+            return;
+        }
         if (sender instanceof Player) {
             Player player = (Player) sender;
             UUID uuid = player.getUniqueId();

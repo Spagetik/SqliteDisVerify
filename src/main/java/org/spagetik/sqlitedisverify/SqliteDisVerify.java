@@ -5,7 +5,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.spagetik.sqlitedisverify.backgroundProcesses.CheckingUsernames;
 import org.spagetik.sqlitedisverify.bot.DiscordBot;
+import org.spagetik.sqlitedisverify.commands.BanDiscordCommand;
 import org.spagetik.sqlitedisverify.commands.DiscordVerifyCommand;
+import org.spagetik.sqlitedisverify.commands.UnbanDiscordCommand;
 import org.spagetik.sqlitedisverify.sql.CodeDb;
 import org.spagetik.sqlitedisverify.sql.GuildDb;
 
@@ -25,6 +27,8 @@ public final class SqliteDisVerify extends JavaPlugin {
         saveDefaultConfig();
         new DiscordBot();
         new DiscordVerifyCommand();
+        new BanDiscordCommand();
+        new UnbanDiscordCommand();
         File dataFolder = new File(getDataFolder(), "DiscordVerify.db");
         if (!dataFolder.exists()){
             try {

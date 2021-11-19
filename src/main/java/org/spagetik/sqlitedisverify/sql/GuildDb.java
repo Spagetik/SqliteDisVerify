@@ -64,6 +64,20 @@ public class GuildDb extends AbstaractDb{
         execute("UPDATE discord_users SET banned = ? WHERE discord_id = ?", data);
     }
 
+    public void banMember(@NotNull Member member) {
+        String[] data = new String[2];
+        data[0] = "1";
+        data[1] = member.getId();
+        execute("UPDATE discord_users SET banned = ? WHERE discord_id = ?", data);
+    }
+
+    public void banMember(@NotNull String id) {
+        String[] data = new String[2];
+        data[0] = "1";
+        data[1] = id;
+        execute("UPDATE discord_users SET banned = ? WHERE discord_id = ?", data);
+    }
+
     public void unBanMember(@NotNull User user) {
         String[] data = new String[2];
         data[0] = "0";
@@ -71,4 +85,10 @@ public class GuildDb extends AbstaractDb{
         execute("UPDATE discord_users SET banned = ? WHERE discord_id = ?", data);
     }
 
+    public void unBanMember(String id) {
+        String[] data = new String[2];
+        data[0] = "0";
+        data[1] = id;
+        execute("UPDATE discord_users SET banned = ? WHERE discord_id = ?", data);
+    }
 }
