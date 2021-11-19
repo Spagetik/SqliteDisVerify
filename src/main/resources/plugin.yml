@@ -1,0 +1,6 @@
+name: SqliteDisVerify
+version: '${project.version}'
+main: org.spagetik.sqlitedisverify.SqliteDisVerify
+api-version: 1.17
+commands:
+  discordverify: {}
